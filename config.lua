@@ -11,11 +11,11 @@ Config.Pricing = {
     Wiet = {
         Min = 50,
         Max = 200
-    }
+    },
     Coke = {
         Min = 150,
         Max = 300
-    }
+    },
     Meth = {
         Min = 200,
         Max = 500
