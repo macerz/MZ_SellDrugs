@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
       Citizen.Wait(0)
         if GetDistanceBetweenCoords(Config.Locations.CokeVerkoop.x, Config.Locations.CokeVerkoop.y, Config.Locations.CokeVerkoop.z, GetEntityCoords(GetPlayerPed(-1),true)) < 2.5 then
             if IsSellingCoke == false then
-                HelpText("Druk op ~INPUT_CONTEXT~ om je zakjes coke te verkopen",0,1,0.5,0.8,0.6,255,255,255,255)
+                HelpText("Press ~INPUT_CONTEXT~ to sell your coke",0,1,0.5,0.8,0.6,255,255,255,255)
             end
   
             if IsControlJustPressed(1,38) and IsSellingCoke == false then
@@ -25,7 +25,7 @@ Citizen.CreateThread(function()
         else
             if IsSellingCoke == true then
                 IsSellingCoke = false
-                notify("~r~Verkoop gestaakt, je hebt de cirkel verlaten.")
+                notify("~r~Action cancelled, you move top far away.")
             end
         end
 
@@ -43,9 +43,9 @@ Citizen.CreateThread(function()
 
                     CokePrice = RandomZakjes * CalcCokePrice
                     TriggerServerEvent('macerz:SellCoke', RandomZakjes, CokePrice)
-                    notify("Je hebt ~g~"..RandomZakjes.."x ~s~zakjes coke verkocht voor ~g~$"..CokePrice)
+                    notify("You sold ~g~"..RandomZakjes.."x ~s~ coke, receiving ~g~$"..CokePrice)
                 else
-                    notify("~r~Je hebt niet genoeg zakjes coke om te verkopen")
+                    notify("~r~You dont have enough weed to sell.")
                     IsSellingCoke = false
                 end
             end)

@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
       Citizen.Wait(0)
         if GetDistanceBetweenCoords(Config.Locations.MethVerkoop.x, Config.Locations.MethVerkoop.y, Config.Locations.MethVerkoop.z, GetEntityCoords(GetPlayerPed(-1),true)) < 2.5 then
             if IsSellingMeth == false then
-                HelpText("Druk op ~INPUT_CONTEXT~ om je zakjes meth te verkopen",0,1,0.5,0.8,0.6,255,255,255,255)
+                HelpText("Press ~INPUT_CONTEXT~ to sell your meth",0,1,0.5,0.8,0.6,255,255,255,255)
             end
   
             if IsControlJustPressed(1,38) and IsSellingMeth == false then
@@ -25,7 +25,7 @@ Citizen.CreateThread(function()
         else
             if IsSellingMeth == true then
                 IsSellingMeth = false
-                notify("~r~Verkoop gestaakt, je hebt de cirkel verlaten.")
+                notify("~r~Action cancelled, you move top far away.")
             end
         end
 
@@ -43,9 +43,9 @@ Citizen.CreateThread(function()
 
                     MethPrice = RandomZakjes * CalcMethPrice
                     TriggerServerEvent('macerz:SellMeth', RandomZakjes, MethPrice)
-                    notify("Je hebt ~g~"..RandomZakjes.."x ~s~zakjes meth verkocht voor ~g~$"..MethPrice)
+                    notify("You sold ~g~"..RandomZakjes.."x ~s~ coke, receiving ~g~$"..MethPrice)
                 else
-                    notify("~r~Je hebt niet genoeg zakjes meth om te verkopen")
+                    notify("~r~You dont have enough weed to sell.")
                     IsSellingMeth = false
                 end
             end)

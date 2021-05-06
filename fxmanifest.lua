@@ -6,7 +6,7 @@ description 'Custom Drug Selling script made by Macerz'
 version '1.0.0'
 
 client_scripts {
-    'client/wiet.lua',
+    'client/weed.lua',
     'client/coke.lua',
     'client/meth.lua',
 }
