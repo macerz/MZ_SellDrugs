@@ -25,7 +25,7 @@ Citizen.CreateThread(function()
         else
             if IsSellingWiet == true then
                 IsSellingWiet = false
-                notify("~r~Action cancelled, you move top far away.")
+                notify("~r~Action cancelled, you moved too far away.")
             end
         end
 
