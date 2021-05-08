@@ -25,7 +25,7 @@ Citizen.CreateThread(function()
         else
             if IsSellingCoke == true then
                 IsSellingCoke = false
-                notify("~r~Action cancelled, you move top far away.")
+                notify("~r~Action cancelled, you moved too far away.")
             end
         end
 
